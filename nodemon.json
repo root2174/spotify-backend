@@ -1,0 +1,7 @@
+{
+	"watch": ["src"],
+	"ext": "js",
+	"execmap": {
+		"js": "node src/index.js"
+	}
+}
