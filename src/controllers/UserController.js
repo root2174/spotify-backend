@@ -30,6 +30,8 @@ module.exports = {
 			playlist,
 		} = req.body;
 
+		console.log('chegou no backend');
+
 		const playlistString = playlist.toString();
 
 		const id = crypto.randomBytes(4).toString('HEX');
