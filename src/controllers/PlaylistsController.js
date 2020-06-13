@@ -7,12 +7,12 @@ module.exports = {
 		console.log(playlists);
 		return res.json(playlists);
 	},
-	async getPlaylistByName(req, res) {
-		const { name } = req.query;
-		console.log(name);
-		const playlist = await connection('playlists')
+	async getPlaylist(req, res) {
+		const { id } = req.params;
+		console.log(id);
+		let playlist = await connection('playlists')
 			.select('*')
-			.where({ name: name });
+			.where({ id: id });
 
 		return res.json(playlist);
 	},

@@ -18,7 +18,7 @@ routes.delete('/users/:id', UserController.delete);
 //Playlists Routes
 routes.post('/playlists', PlaylistsController.create);
 routes.get('/playlists', PlaylistsController.index);
-routes.get('/playlist', PlaylistsController.getPlaylistByName);
+routes.get('/playlist/:id', PlaylistsController.getPlaylist);
 routes.put('/playlist/:id', PlaylistsController.update);
 routes.delete('/playlists/:id', PlaylistsController.delete);
 
@@ -26,6 +26,7 @@ routes.delete('/playlists/:id', PlaylistsController.delete);
 routes.post('/songs', SongsController.create);
 routes.get('/songs', SongsController.index);
 routes.get('/song', SongsController.getSongByName);
+routes.get('/song/author', SongsController.getSongByAuthor);
 routes.put('/song/:id', SongsController.update);
 routes.delete('/songs/:id', SongsController.delete);
 

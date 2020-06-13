@@ -9,10 +9,24 @@ module.exports = {
 	},
 	async getSongByName(req, res) {
 		const { name } = req.query;
+
 		console.log(name);
+
 		const playlist = await connection('songs')
 			.select('*')
-			.where({ name: name });
+			.where('name', 'like', `%${name}%`);
+
+		return res.json(playlist);
+	},
+
+	async getSongByAuthor(req, res) {
+		const { author } = req.query;
+
+		console.log(author);
+
+		const playlist = await connection('songs')
+			.select('*')
+			.where('author', 'like', `%${author}%`);
 
 		return res.json(playlist);
 	},
